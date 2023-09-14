@@ -14,7 +14,7 @@ public interface MySqlRepository extends JpaRepository<student,Integer>{
     public List<student>findByName(String name);
     public List<student>findByNameLike(String name);
 
-    @Query(value = "Select u From student u WHERE u.contact =:n",nativeQuery = true)
+    @Query(value = "Select * From student WHERE contact =:n",nativeQuery = true)
     public List<student>findBycontact(@Param("n") Integer name);
 
 
